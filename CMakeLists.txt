@@ -40,7 +40,7 @@ else()
 endif()
 
 # Use system zlib on unix and Qt ZLIB on Windows
-if(UNIX OR MINGW)
+if(UNIX OR MINGW OR VCPKG_TOOLCHAIN)
     find_package(ZLIB REQUIRED)
 else()
     set(ZLIB_INCLUDE_DIRS "${QT_ROOT}/src/3rdparty/zlib" CACHE STRING "Path to ZLIB headers of Qt")
